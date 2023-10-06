@@ -14,10 +14,12 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Welcome />} />
+        <Route path="/welcome" element={<Welcome />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contactingus" element={<ContactingUs />} />
         <Route path="/schedule" element={<Schedule />} />
+
       </Routes>
     </BrowserRouter>
   );
