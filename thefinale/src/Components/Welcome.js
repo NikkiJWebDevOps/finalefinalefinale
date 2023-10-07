@@ -5,6 +5,7 @@ function Welcome() {
   return (
     <div>
       <h1>Welcome to The Zen Pup</h1>
+      
       <br></br> 
       <br></br> 
       <p>Open 8AM ⋅ Closes 6PM
@@ -30,6 +31,7 @@ function Welcome() {
         Bernalillo
         </p>
           
+      
        
         <br></br>
         <br></br>
