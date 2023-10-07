@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Services() {
+function Pricing() {
   return (
     <div>
       <h1>Our Services & Pricing</h1>
@@ -60,4 +60,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default Pricing;
