@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 class Form extends Component {
   constructor(props) {
@@ -10,6 +9,8 @@ class Form extends Component {
       email: '',
       dogBreedName: '',
       additionalInfo: '',
+      data: [],
+      editingIndex: -1,
     };
   }
 
@@ -21,21 +22,64 @@ class Form extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    // Check if all fields are filled
-    const { fullName, phoneNumber, email, dogBreedName, additionalInfo } = this.state;
-    if (!fullName || !phoneNumber || !email || !dogBreedName || !additionalInfo) {
-      alert('Please fill in all fields.');
+    const { fullName, phoneNumber, email, dogBreedName, additionalInfo, editingIndex } = this.state;
+    const newData = {
+      fullName,
+      phoneNumber,
+      email,
+      dogBreedName,
+      additionalInfo,
+    };
+
+    if (editingIndex === -1) {
+      this.setState((prevState) => ({
+        data: [...prevState.data, newData],
+      }));
     } else {
-      // You can submit the form data or perform any other actions here
-      // For example, you can use an API call to send the data to a server.
-      alert('Form submitted successfully!');
-      // Redirect to a thank you page or any other desired route
-      const navigate = useNavigate();
-      navigate('/thank-you');
+      this.setState((prevState) => {
+        const updatedData = [...prevState.data];
+        updatedData[editingIndex] = newData;
+        return { data: updatedData, editingIndex: -1 };
+      });
     }
+
+    this.clearForm();
+  };
+
+  clearForm() {
+    this.setState({
+      fullName: '',
+      phoneNumber: '',
+      email: '',
+      dogBreedName: '',
+      additionalInfo: '',
+      editingIndex: -1,
+    });
+  }
+
+  handleEdit = (index) => {
+    const { data } = this.state;
+    const itemToEdit = data[index];
+    this.setState({
+      fullName: itemToEdit.fullName,
+      phoneNumber: itemToEdit.phoneNumber,
+      email: itemToEdit.email,
+      dogBreedName: itemToEdit.dogBreedName,
+      additionalInfo: itemToEdit.additionalInfo,
+      editingIndex: index,
+    });
+  };
+
+  handleDelete = (index) => {
+    const { data } = this.state;
+    const updatedData = [...data];
+    updatedData.splice(index, 1);
+    this.setState({ data: updatedData });
   };
 
   render() {
+    const { data } = this.state;
+
     return (
       <div>
         <h2>Form</h2>
@@ -104,12 +148,38 @@ class Form extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div>
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </div>
+          <button type="submit" className="btn btn-primary">
+            {this.state.editingIndex === -1 ? 'Create' : 'Update'}
+          </button>
         </form>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+              <th>Dog Breed Name</th>
+              <th>Additional Info</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item, index) => (
+              <tr key={index}>
+                <td>{item.fullName}</td>
+                <td>{item.phoneNumber}</td>
+                <td>{item.email}</td>
+                <td>{item.dogBreedName}</td>
+                <td>{item.additionalInfo}</td>
+                <td>
+                  <button onClick={() => this.handleEdit(index)}>Edit</button>
+                  <button onClick={() => this.handleDelete(index)}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     );
   }

@@ -1,10 +1,10 @@
 import React from 'react';
-
+import Footer from './Footer'
 
 function Welcome() {
   return (
     <div>
-      <h1>Welcome to 'The Zen Pup'</h1>
+      <h1>Welcome to The Zen Pup</h1>
       <br></br> 
       <br></br> 
       <p>Open 8AM ⋅ Closes 6PM
@@ -29,10 +29,37 @@ function Welcome() {
         <br></br> 
         Bernalillo
         </p>
+      
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
 
-      {/* Add more content as needed */}
+      <footer>
+      <div className="footer-content">
+        
+        <div className="text-center">
+          <h2>Contact Information</h2>
+          <p>The Zen Pup</p>
+          <p>Email: thezenpupabq@gmail.com</p>
+          <p>Phone: +1 (505) 867-5309</p>
+          {/* Add any other contact information you want */}
+        </div>
+        <div className="footer-project">
+          <p className="text-center text-white">
+            
+                 </p>
+        </div>
+      </div>
+      <footer className="text-center mt-3">Nikki Johnson Week 16 Coding Assignment Promineo Tech · ©2023</footer>
+      <footer className="text-center mt-3">The ZenPup ©️ 2023</footer>
+      </footer>
     </div>
   );
 }
+
 
 export default Welcome;

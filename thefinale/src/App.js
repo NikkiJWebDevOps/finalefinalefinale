@@ -7,7 +7,6 @@ import Pricing from './Components/Pricing';
 import Contact from './Components/Contact'; 
 import Form from './Components/Form'; 
 import AppointmentPage from './Components/AppointmentPage';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -18,7 +17,7 @@ function App() {
         <Route path="/" element={<Welcome />} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/about" element={<About />} />
-          <Route path="/pricing" element={<Pricing />} />
+        <Route path="/pricing" element={<Pricing />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/form" element={<Form />} />
         <Route path="/appointmentpage" element={<AppointmentPage />} />

@@ -20,7 +20,7 @@ function NavbarComponent() {
           <br></br>
 
           <NavDropdown title="Services" id="basic-nav-dropdown">
-            <NavDropdown.Item href="services">Service</NavDropdown.Item>
+            <NavDropdown.Item href="/">TBD</NavDropdown.Item>
             <br></br>
             <NavDropdown.Item href="pricing">Pricing</NavDropdown.Item>
             <br></br>

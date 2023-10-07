@@ -14,11 +14,13 @@ const Footer = () => {
         </div>
         <div className="footer-project">
           <h2>React Router Unit Final Project</h2>
-          <p class="text-center text-white">
+          <p className="text-center text-white">
           Copyright &copy; www.TheZenPup.com 2023 &copy;
         </p>
         </div>
       </div>
+      <footer className="text-center mt-3">Nikki Johnson Week 16 Coding Assignment Promineo Tech · ©2023</footer>
+      <footer className="text-center mt-3">The ZenPup ©️ 2023</footer>
     </footer>
   );
 };
