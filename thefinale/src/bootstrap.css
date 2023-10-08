@@ -1,6 +1,21 @@
 /* custom-bootstrap.css */
 
 
+.NavbarComponent {
+          font-size: 20px;
+          line-height: 2;
+          letter-spacing: 1px;
+          text-align: justify;
+          }
+          .NavbarComponent-header {
+            background-color: #af0a0a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: calc(10px + 2vmin);
+            color: rgb(12, 43, 9);
+          }
 
 .App {
           text-align: center;
@@ -18,7 +33,7 @@
         }
         
         .App-header {
-          background-color: #282c34;
+          background-color: #08399c;
           min-height: 100vh;
           display: flex;
           flex-direction: column;
@@ -29,7 +44,7 @@
         }
         
         .App-link {
-          color: #61dafb;
+          color: #e73a0f;
         }
         
         @keyframes App-logo-spin {
@@ -41,26 +56,27 @@
           }
         }
         h1 {
-          font-size: 60px;
+          font-size: 100px;
           text-align: center;
         }
         
         p,
         li {
-          font-size: 16px;
+          font-size: 20px;
           line-height: 2;
           letter-spacing: 1px;
+          text-align: center;
         }
 /* Change the primary button color to red */
 .btn-primary {
           background-color: red;
           border-color: red;
-          color: white;
+          color: rgb(12, 7, 7);
         }
         
         /* Add a custom class for special styling */
         .special-button {
-          background-color: #f0a500;
+          background-color: #f07400;
           border-color: #f0a500;
           color: white;
         }
@@ -82,15 +98,16 @@
             monospace;
         }
         h1 {
-          font-size: 60px;
+          font-size: 100px;
           text-align: center;
         }
         
         p,
         li {
-          font-size: 16px;
+          font-size: 20px;
           line-height: 2;
           letter-spacing: 1px;
+          text-align: center;
         }
 
 

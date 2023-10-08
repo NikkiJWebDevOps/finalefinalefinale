@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'; 
+import { Image } from 'react-bootstrap';
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'; 
 import NavbarComponent from './Components/NavbarComponent';
 import Welcome from './Components/Welcome';
 import About from './Components/About'; 
@@ -11,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
+    <>
     <BrowserRouter>
       <NavbarComponent />
       <Routes>
@@ -21,8 +23,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/form" element={<Form />} />
         <Route path="/appointmentpage" element={<AppointmentPage />} />
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+   </BrowserRouter>
+    </>
   );
 }
 

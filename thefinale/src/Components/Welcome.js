@@ -1,5 +1,8 @@
 import React from 'react';
 import Footer from './Footer'
+import { Link } from 'react-router-dom'; 
+import TheZenPupLogo from '../images/TheZenPupLogo.jpg'; 
+import babiescuteness from '../images/babiescuteness.jpg'
 
 function Welcome() {
   return (
@@ -31,7 +34,11 @@ function Welcome() {
         Bernalillo
         </p>
           
-      
+        <div>
+        <Link to="/about">
+      <img src={TheZenPupLogo} alt="The Zen Pup Logo" />
+        </Link>
+      </div>
        
         <br></br>
         <br></br>
